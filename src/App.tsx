@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import RevealTransition from "./reveal-transition";
+import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RevealTransition position="left">
+        <section className="section1">
+          <h1>Scroll Down</h1>
+        </section>
+      </RevealTransition>
+      <RevealTransition position="right">
+        <section className="section2">
+          <h1>Scroll Down</h1>
+        </section>
+      </RevealTransition>
+      <RevealTransition position="left">
+        <section className="section1">
+          <h1>Scroll Down</h1>
+        </section>
+      </RevealTransition>
+      <RevealTransition position="right">
+        <section className="section2">
+          <h1>Scroll Down</h1>
+        </section>
+      </RevealTransition>
     </div>
   );
 }
