@@ -12,10 +12,11 @@ const RevealTransition: React.FC<RevealProps> = (props) => {
     transitionType = "ease-in-out",
     transitionTime = 500,
     delay = 0,
+    once = true,
   } = props;
 
   const revealRef = useRef<HTMLDivElement>(null);
-  const onScreen = useOnScreen(revealRef);
+  const onScreen = useOnScreen(revealRef, "0px", once);
   const size = useWindowSize();
   const mq = { mobile: 375 };
 
@@ -49,6 +50,7 @@ interface RevealProps {
   transitionType?: "ease-in-out" | "linear";
   transitionTime?: number;
   delay?: number;
+  once?: boolean;
 }
 
 export default RevealTransition;

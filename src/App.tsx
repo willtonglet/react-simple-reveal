@@ -7,28 +7,28 @@ function App() {
     <div className="App">
       <RevealTransition position="left">
         <section className="section1">
-          <RevealTransition position="top" delay={800}>
+          <RevealTransition position="top" delay={800} once={false}>
             <h1>Scroll Down</h1>
           </RevealTransition>
         </section>
       </RevealTransition>
       <RevealTransition position="right">
         <section className="section2">
-          <RevealTransition position="bottom" delay={800}>
+          <RevealTransition position="bottom" delay={800} once={false}>
             <h1>Scroll Down</h1>
           </RevealTransition>
         </section>
       </RevealTransition>
       <RevealTransition position="left">
         <section className="section1">
-          <RevealTransition position="top" delay={800}>
+          <RevealTransition position="top" delay={800} once={false}>
             <h1>Scroll Down</h1>
           </RevealTransition>
         </section>
       </RevealTransition>
       <RevealTransition position="right">
         <section className="section2">
-          <RevealTransition position="bottom" delay={800}>
+          <RevealTransition position="bottom" delay={800} once={false}>
             <h1>Scroll Down</h1>
           </RevealTransition>
         </section>
