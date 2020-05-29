@@ -4,9 +4,21 @@ import useOnScreen from "../hook/useOnScreen";
 import useWindowSize from "../hook/useWindowSize";
 import styles from "./styles.module.scss";
 
+interface RevealProps {
+  children?: React.ReactNode;
+  htmlTag?: keyof JSX.IntrinsicAttributes;
+  position?: "left" | "right" | "top" | "bottom" | "centered";
+  mobilePosition?: "left" | "right" | "top" | "bottom" | "centered" | "none";
+  transitionType?: "ease-in-out" | "linear";
+  transitionTime?: number;
+  delay?: number;
+  once?: boolean;
+}
+
 const RevealTransition: React.FC<RevealProps> = (props) => {
   const {
     children,
+    htmlTag = "div",
     position = "centered",
     mobilePosition,
     transitionType = "ease-in-out",
@@ -36,21 +48,15 @@ const RevealTransition: React.FC<RevealProps> = (props) => {
     animationTimingFunction: transitionType,
   };
 
-  return (
-    <div className={renderReveal} ref={revealRef} style={handleStyles}>
-      {children}
-    </div>
+  return React.createElement(
+    htmlTag,
+    {
+      className: renderReveal,
+      style: handleStyles,
+      ref: revealRef,
+    },
+    children
   );
 };
-
-interface RevealProps {
-  children?: React.ReactNode;
-  position?: "left" | "right" | "top" | "bottom" | "centered";
-  mobilePosition?: "left" | "right" | "top" | "bottom" | "centered" | "none";
-  transitionType?: "ease-in-out" | "linear";
-  transitionTime?: number;
-  delay?: number;
-  once?: boolean;
-}
 
 export default RevealTransition;
